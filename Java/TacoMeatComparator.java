@@ -1,5 +1,7 @@
 package code_design_patterns.java;
+
 import java.util.Comparator;
+
 //custom comparator natural order (using String property (Alphabetical))
 public class TacoMeatComparator implements Comparator<Taco> {
   @Override

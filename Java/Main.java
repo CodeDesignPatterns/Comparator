@@ -9,45 +9,44 @@ public class Main {
 
   public static void main(String[] args) {
     Taco taco = new Taco.Builder()
-            .meat("Beef")
-            .cheese("Tasty")
-            .shell("Hard")
-            .vegan(false)
-            .salad(true)
-            .build();
+        .meat("Beef")
+        .cheese("Tasty")
+        .shell("Hard")
+        .vegan(false)
+        .salad(true)
+        .build();
 
-             Taco taco2 = new Taco.Builder()
-            .meat("chicken")
-            .cheese("Tasty")
-            .shell("Hard")
-            .vegan(false)
-            .salad(true)
-            .build();
+    Taco taco2 = new Taco.Builder()
+        .meat("chicken")
+        .cheese("Tasty")
+        .shell("Hard")
+        .vegan(false)
+        .salad(true)
+        .build();
 
-            Taco taco3 = new Taco.Builder()
-            .meat("dog")
-            .cheese("Tasty")
-            .shell("Hard")
-            .vegan(false)
-            .salad(true)
-            .build();
-   
+    Taco taco3 = new Taco.Builder()
+        .meat("dog")
+        .cheese("Tasty")
+        .shell("Hard")
+        .vegan(false)
+        .salad(true)
+        .build();
+
     // Add Taco in reverse order for intitial setup
     List<Taco> list = new ArrayList<Taco>();
     list.add(taco3);
     list.add(taco2);
     list.add(taco);
 
-    // This stream calls sorted twice passing two different comparator classes. First it will sort naturally by meat name, then prioritise
+    // This stream calls sorted twice passing two different comparator classes.
+    // First it will sort naturally by meat name, then prioritise
     // any Chicken meat to the front of the list
     List<Taco> newList = list.stream()
-    .sorted(new TacoMeatComparator())
-    .sorted(new TacoChickenComparator())
-    .collect(Collectors.toList());
+        .sorted(new TacoMeatComparator())
+        .sorted(new TacoChickenComparator())
+        .collect(Collectors.toList());
 
-    
-
-    for(Taco t : newList) {
+    for (Taco t : newList) {
       System.out.println(t);
     }
   }

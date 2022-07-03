@@ -1,5 +1,7 @@
 package code_design_patterns.java;
+
 import java.util.Comparator;
+
 //custom comparator class that always sorts "Chicken" meat as highest priority
 public class TacoChickenComparator implements Comparator<Taco> {
   @Override
@@ -13,4 +15,3 @@ public class TacoChickenComparator implements Comparator<Taco> {
     }
   }
 }
-

@@ -39,12 +39,12 @@ public class Taco {
   @Override
   public String toString() {
     return "Taco{" +
-            "meat='" + meat + '\'' +
-            ", cheese='" + cheese + '\'' +
-            ", shell='" + shell + '\'' +
-            ", vegan=" + vegan +
-            ", salad=" + salad +
-            '}';
+        "meat='" + meat + '\'' +
+        ", cheese='" + cheese + '\'' +
+        ", shell='" + shell + '\'' +
+        ", vegan=" + vegan +
+        ", salad=" + salad +
+        '}';
   }
 
   public static class Builder {
@@ -58,6 +58,7 @@ public class Taco {
       this.meat = meat;
       return this;
     }
+
     public Builder cheese(String cheese) {
       this.cheese = cheese;
       return this;
@@ -78,7 +79,7 @@ public class Taco {
       return this;
     }
 
-    public Taco build(){
+    public Taco build() {
       Taco taco = new Taco(this);
       return taco;
     }
