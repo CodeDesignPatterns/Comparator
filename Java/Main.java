@@ -8,29 +8,14 @@ import java.util.stream.Collectors;
 public class Main {
 
   public static void main(String[] args) {
-    Taco taco = new Taco.Builder()
-        .meat("Beef")
-        .cheese("Tasty")
-        .shell("Hard")
-        .vegan(false)
-        .salad(true)
-        .build();
+    Taco taco = new Taco("beef");
+       
 
-    Taco taco2 = new Taco.Builder()
-        .meat("chicken")
-        .cheese("Tasty")
-        .shell("Hard")
-        .vegan(false)
-        .salad(true)
-        .build();
+    Taco taco2 = new Taco("chicken");
+        
 
-    Taco taco3 = new Taco.Builder()
-        .meat("dog")
-        .cheese("Tasty")
-        .shell("Hard")
-        .vegan(false)
-        .salad(true)
-        .build();
+    Taco taco3 = new Taco("lamb");
+  
 
     // Add Taco in reverse order for intitial setup
     List<Taco> list = new ArrayList<Taco>();
@@ -46,8 +31,8 @@ public class Main {
         .sorted(new TacoChickenComparator())
         .collect(Collectors.toList());
 
-    for (Taco t : newList) {
-      System.out.println(t);
+    for (Taco finishedTaco : newList) {
+      System.out.println(finishedTaco);
     }
   }
 }
